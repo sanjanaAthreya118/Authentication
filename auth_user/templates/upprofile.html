@@ -1,0 +1,25 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block abc %}
+<link rel="stylesheet" href="{% static 'register.css' %}">
+<div class="cont">
+   <div class="bigbox">
+     <div class="box">
+       <h2>UpdateProfile</h2>
+       <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <div class="fr">
+            <label for="">Enter your Profile image:</label> 
+            <input type="file" name="imgs" id="">
+        </div>
+      <button type="submit">update Profile Image</button>
+    </form>
+    </div>
+    </div>
+    </div>
+
+
+
+
+{% endblock %}

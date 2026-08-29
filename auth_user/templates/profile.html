@@ -1,0 +1,25 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block abc %}
+<link rel="stylesheet" href="{% static 'profile.css' %}">
+<div class="cont">
+    <div class="big">
+        <div class="box">
+     
+          <img src="{{data.images.url}}" alt="" width="175px" height="150px">
+       
+    <h1>profile Page</h1> <br>
+    <p> <span>verify : </span>{{request.user.is_authenticated}}</p>
+    <p><span>user : </span>{{request.user}}</p>
+    <p><span>First Name : </span>{{request.user.first_name}}</p>
+    <p><span>Last Name : </span>{{request.user.last_name}} </p>
+    <p><span>Email : </span>{{request.user.email}}</p>
+    <p><span>username : </span>{{request.user.username}}</p>
+    <button type="submit" ><a href="{% url 'update' %}">Update</a></button>
+    <button type="submit" ><a href="{% url 'upprofile' %}">Update profile image</a></button>
+    <button type="submit"><a href="{% url 'reset' %}">Reset Password</a></button>
+    </div>
+
+    </div>
+</div>
+{% endblock %}

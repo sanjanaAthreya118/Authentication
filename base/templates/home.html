@@ -1,0 +1,26 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block abc %}
+<link rel="stylesheet" href="{% static 'home.css' %}">
+<div class="cont">
+    <center style="margin: 3rem;">
+         <form action="">
+            <input type="text" name="q" id="" placeholder="Search here">
+            <button type="submit">Search</button>
+        </form>
+       
+       </center>
+    <div class="bigbox">
+       
+        {% for i in data %}
+            <div class="box">
+            <h2>title: {{i.title}}</h2>
+            <p>desc: {{i.desc}}</p>
+            <p>price: {{i.price}}</p>
+            <button type="submit"><a href="{% url 'base:delete' i.id %}">delete</a></button>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

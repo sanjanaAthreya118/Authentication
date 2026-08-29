@@ -1,0 +1,32 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block abc %}
+<link rel="stylesheet" href="{% static 'profile.css' %}">
+<div class="cont">
+     {% for i in messages %}
+     <h2>{{i}}</h2>
+    {% endfor %}
+    <div class="big">
+    <div class="box">
+
+    <h1>Reset Password</h1> <br>
+    <form action="" method="POST">
+        {% csrf_token %}
+    <label for="">UserName:</label><br>
+    <input type="text" value="{{request.user}}"><br>
+
+    {% if new %} <br>
+        <label for="">New password:</label> <br>
+        <input type="text" name="npswd" id=""> <br> <br>
+    {% else %} <br>
+        <label for="">Old password:</label> <br>
+        <input type="text" name="opswd" id=""> <br>
+    {% endif %}
+    <br>
+    <button type="submit" >Reset</button>
+    </form>
+    </div>
+
+    </div>
+</div>
+{% endblock %}

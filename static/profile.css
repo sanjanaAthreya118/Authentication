@@ -1,0 +1,45 @@
+.box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: solid black 2px;
+    width: 500px;
+    padding: 1rem;
+    gap: 1rem; 
+    
+}
+
+.big{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 95vh;  
+}
+
+span{
+    color: black;
+    font-weight: bold;
+    
+}
+h1{
+    color: rgba(198, 157, 8, 0.888);
+}
+p{
+    font-size: 20px;
+    width: 300px;
+    
+}
+
+button{
+    padding: 0.5rem 1rem;
+
+}
+a{
+    text-decoration: none;
+}
+
+img{
+    border-radius: 50%;
+}

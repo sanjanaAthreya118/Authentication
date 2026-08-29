@@ -1,0 +1,19 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block abc %}
+<center style="margin: 5rem;">
+    <form action="" method="POST">
+        {% csrf_token %}
+    <label for="">Title :</label>
+    <input type="text" name="title"> <br><br>
+
+    <label for="">Desc:</label>
+    <input type="text" name="desc" id=""><br><br>
+
+    <label for="">Price:</label>
+    <input type="text" name="price" id=""><br><br>
+
+    <button type="submit">Submit</button>
+    </form>
+</center>
+{% endblock %}

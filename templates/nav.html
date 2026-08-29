@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nav</title>
+    <link rel="stylesheet" href="{% static 'nav.css' %}">
+</head>
+<body>
+    <div class="cont">
+        <div class="navbar">
+            <div class="innav">
+                <div class="r1">
+                    <h2 style="color: white;padding-left: 2rem;">Authlog</h2>
+                </div>
+                
+                <div class="r2">
+             
+            <nav>
+            <ul class="navu">
+            {% if user.is_authenticated %}
+                    <li><a href="{% url 'base:home' %}">HOME</a></li>
+                    <li><a href="{% url 'base:add' %}">ADD</a></li>
+                    <li><a href="">COMPLETE</a></li>
+                    <li><a href="{% url 'base:trash' %}">TRASH</a></li>
+                    <li><a href="{% url 'profile' %}">PROFILE ({{request.user}})</a></li>
+                    <li><a href="{% url 'logout_' %}">LOGOUT</a></li>
+            {% else %}
+                    <li><a href="{% url 'login_' %}">LOGIN</a></li>
+                    <li><a href="{% url 'register' %}">REGISTER</a></li>
+                    <li><a href="">ABOUT</a></li>
+            {% endif %}
+            </ul>
+           </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

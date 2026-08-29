@@ -1,0 +1,12 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block abc %}
+
+<div class="cont">
+{% for message in messages %}
+        <h2 style="color: blue;">{{message}}</h2>
+{% endfor %}
+</div>
+
+
+{% endblock %}

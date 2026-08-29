@@ -1,0 +1,20 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block abc %}
+<link rel="stylesheet" href="{% static 'home.css' %}">
+<div class="cont">
+    <div class="bigbox">
+       
+        {% for i in data %}
+            <div class="box">
+            <h2>title: {{i.title}}</h2>
+            <p>desc: {{i.desc}}</p>
+            </div>
+        {% endfor %}
+    </div>
+    <center>
+        <button><a href="{% url 'base:pdelete' %}">DELETE ALL</a></button>
+    </center>
+</div>
+
+{% endblock %}

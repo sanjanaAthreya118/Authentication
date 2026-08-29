@@ -1,0 +1,39 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block abc %}
+<link rel="stylesheet" href="{% static 'register.css' %}">
+<div class="cont">
+   <div class="bigbox">
+     <div class="box">
+        <h2>Reigister Form</h2>
+        <form action="" method="POST">
+        {% csrf_token %}
+        <div class="fr">
+            <label for="">First Name :</label>
+            <input type="text" name="fn" id="" value="{{d.first_name}}">
+        </div>
+
+        <div class="fr">
+            <label for="">Last Name :</label>
+            <input type="text" name="ln" id="" value="{{d.last_name}}">
+        </div>
+
+          <div class="fr">
+            <label for="">Email :</label>
+            <input type="email" name="em" id="" value="{{d.email}}">
+        </div>
+
+        <div class="fr">
+            <label for="">User Name :</label>
+            <input type="text" name="un" id="" value="{{d.username}}">
+        </div>
+      <button type="submit">update</button>
+    </form>
+
+    </div>
+
+
+    
+   </div>
+</div>
+{% endblock %}

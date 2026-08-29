@@ -1,0 +1,39 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block abc %}
+<link rel="stylesheet" href="{% static 'profile.css' %}">
+<div class="cont">
+     {% for i in messages %}
+     <h2>{{i}}</h2>
+    {% endfor %}
+    <div class="big">
+    <div class="box">
+    <h1>Forgot Password</h1> <br>
+    <form action="" method="POST">
+        {% csrf_token %}
+    
+
+    {% if forgot %}
+
+        <label for=""> Set New password:</label> <br>
+        <input type="text" name="fpaswd" id=""> <br> <br>
+
+    {% elif confirm %}
+    
+        <label for="">Confirm password:</label><br>
+        <input type="text" name="cpswd" id=""> <br><br>
+ 
+    {% else %}
+
+        <label for="">Enter UserName:</label><br>
+        <input type="text" value="" name="uname"><br> <br>
+   
+    {% endif %}
+
+        <button type="submit">Submit</button> <br>
+    </form>
+    </div>
+
+    </div>
+</div>
+{% endblock %}
